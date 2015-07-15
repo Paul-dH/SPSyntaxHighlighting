@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <CustomAction Id="cb1834f2-06ed-4b4e-9531-71bdc4539fcb.HostWebCustomAction"
+  Location="CommandUI.Ribbon">
+  <CommandUIExtension>
+    <CommandUIDefinitions>
+      <CommandUIDefinition Location="Ribbon.ContextualTabs.ProjectCenter.Home.Groups._children">
+        <Group Id="Ribbon.ContextualTabs.ProjectCenter.Home.Publish"
+        Sequence="110"
+        Description="Publish Custom Group"
+        Title="Publish App"
+        Template="Ribbon.Templates.Flexible2">
+          <Controls Id="Ribbon.ContextualTabs.ProjectCenter.Home.Publish.Controls">
+            <Button Id="Ribbon.ContextualTabs.ProjectCenter.Home.Publish.PublishAllProjects"
+            Sequence="10"
+            Command="Invoke_CustomAction"
+            Alt="Publish"
+            LabelText="Publish all projects"
+            TemplateAlias="o1"
+            Image16by16="_layouts/15/1033/images/ps16x16.png?rev=23"
+            Image16by16Left="0"
+            Image16by16Top="-112"
+            Image32by32="_layouts/15/1033/images/ps32x32.png?rev=23"
+            Image32by32Left="0"
+            Image32by32Top="-224"/>
+          </Controls>
+        </Group>
+      </CommandUIDefinition>
+      <CommandUIDefinition Location="Ribbon.ContextualTabs.ProjectCenter.Home.Scaling._children">
+        <MaxSize
+        Id="Ribbon.ContextualTabs.ProjectCenter.Home.Publish"
+        Sequence="140"
+        GroupId="Ribbon.ContextualTabs.ProjectCenter.Home.Publish"
+        Size="LargeLarge"/>
+      </CommandUIDefinition>
+    </CommandUIDefinitions>
+    <CommandUIHandlers>
+      <CommandUIHandler
+      Command="Invoke_CustomAction"
+      CommandAction="~appWebUrl/Pages/Default.aspx?{StandardTokens}"/>
+    </CommandUIHandlers>
+  </CommandUIExtension>
+  </CustomAction>
+</Elements>
